@@ -13467,7 +13467,7 @@ AAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
 <p><strong>Answer:</strong>
-The restriction of accepting human images only when they provide a clear view of the face is not reasonable. A lot of situations require real-time detection of faces (eg. surveillance) and having such a restriction cannot be applied then.</p>
+The restriction of accepting human images only when they provide a clear view of the face is not reasonable. A lot of situations require real-time detection of faces (eg. surveillance) and having such a restriction cannot be applied then. To detect humans in images when a clearly presented face is not provided, the training data can be augmented to include translations and rotations of images which can lead to images where the face is not clearly presented. To take into account side views of humans, additional training data should be used.</p>
 <p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
 
 </div>
@@ -14791,7 +14791,7 @@ Epoch 20/20
 The output for the 7 sample images is better than I expected. It detected 3 of the 4 dog breeds correctly. It correctly detected humans in 2 other images that I passed and returned the corresponding dog breeds. When a cat's image was passed in the end, it detected that neither a human nor a dog was preesent in the image and it returned an error. 
 The following are the points of improvement in the algorithm:</p>
 <ul>
-<li>The algorithm could be improved to differentiate between similar dog breeds maybee by providing more training data</li>
+<li>The algorithm could be improved to differentiate between similar dog breeds by providing more training data</li>
 <li>The algorithm can be modified to show the image of the dog that resembles the human so that it gives more context to the user on how similar the human and the dog are.</li>
 <li>The probability that the model associates with the dog breed returned could also be shown to display how certain the modsel is in predicting the dog breed.</li>
 </ul>
@@ -15180,19 +15180,6 @@ pexels-photo.jpg    100%[===================&gt;]   3.13M  13.9MB/s    in 0.2s
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
 </div>
 </div>
 
